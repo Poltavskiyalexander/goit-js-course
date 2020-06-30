@@ -1,3 +1,7 @@
+/* +++++++++++++++++++++++++++++++ Условие задания +++++++++++++++++++++++++++++++ 
+Есть пустой массив numbers. Заполнить его 20 случайными числами от -1000 до 1000. 
+Найти сумму, среднее значение, максимальное и минимальное число.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 "use strict";
 function roundingWithPrecision(value, decimals) {
   /*
@@ -28,7 +32,7 @@ function randomNumberGenerator(startNum = 0, endNum = 1, bitNumber = 0) {
    */
   //Проверяем не перепутаны ли начало и конец диапазона
   if (startNum > endNum) {
-    let buffer = startNum;
+    let buffer = endNum;
     endNum = startNum;
     startNum = buffer;
   }
@@ -85,13 +89,45 @@ function DatasetGeneratorWithParameterCalculation(startNum = 0, endNum = 1, bitN
   return result;
 }
 
-console.time("test");
+function DatasetGeneratorWithParameterCalculation2(startNum = 0, endNum = 1, bitNumber = 0, longNumberRow = 1) {
+  //Код от Эвелины
+  //Работает быстрее чем 1 вариант но вылетает с ошибкой переполнения стека при больших массивах 500000 и более
+  let arr = [];
+  let sum = 0;
+  let average;
+  let i;
+  for (i = 0; i < longNumberRow; i++) {
+    arr.push(randomNumberGenerator(startNum, endNum, bitNumber));
+    sum += arr[i];
+  }
+  average = roundingWithPrecision(sum / arr.length, 0);
+  // average = Math.round(sum / arr.length);
+  const result = [arr, i, Math.min.apply(null, arr), Math.max.apply(null, arr), average, sum];
+  return result;
+}
+
+const MINIM = -1000;
+const MAXIM = 1000;
+const DEG = 0;
+const LEN = 10000;
+// ------------------------МОЙ КОД-----------------
+console.time("DatasetGeneratorWithParameterCalculation");
 // const GenArray = DatasetGeneratorWithParameterCalculation(0.9, 1.11, 0, 4);
 // const GenArray = DatasetGeneratorWithParameterCalculation(-10.5, 10.55, 0, 2000000);
-const GenArray = DatasetGeneratorWithParameterCalculation(-1000, 1000, 0, 20);
-console.log("Сгенерированный массив: " + GenArray[0]);
+const GenArray = DatasetGeneratorWithParameterCalculation(MINIM, MAXIM, DEG, LEN);
+// console.log("Сгенерированный массив: " + GenArray[0]);
 console.log("Сумма чисел: " + GenArray[5]);
 console.log("Среднее значение: " + roundingWithPrecision(GenArray[4], 1));
 console.log("Минимальное: " + GenArray[2]);
 console.log("Максимальное: " + GenArray[3]);
-console.timeEnd("test");
+console.timeEnd("DatasetGeneratorWithParameterCalculation");
+console.time("DatasetGeneratorWithParameterCalculation2");
+// const GenArray = DatasetGeneratorWithParameterCalculation2(0.9, 1.11, 0, 4);
+// const GenArray = DatasetGeneratorWithParameterCalculation2(-10.5, 10.55, 0, 2000000);
+const GenArray2 = DatasetGeneratorWithParameterCalculation2(MINIM, MAXIM, DEG, LEN);
+// console.log("Сгенерированный массив: " + GenArray2[0]);
+console.log("Сумма чисел: " + GenArray2[5]);
+console.log("Среднее значение: " + roundingWithPrecision(GenArray2[4], 1));
+console.log("Минимальное: " + GenArray2[2]);
+console.log("Максимальное: " + GenArray2[3]);
+console.timeEnd("DatasetGeneratorWithParameterCalculation2");
