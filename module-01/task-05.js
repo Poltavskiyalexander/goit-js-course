@@ -1,28 +1,27 @@
 "use strict";
 const COST_CHINA = 100,
   COST_CHILE = 250,
-  COST_AUSTRALIA = 250,
-  COST_INDIA = 250,
-  COST_JAMAICA = 250;
+  COST_AUSTRALIA = 170,
+  COST_INDIA = 80,
+  COST_JAMAICA = 120;
 const userCountry = prompt("Введите название страны");
+let cost = -Infinity;
 if (userCountry !== null) {
   switch (userCountry.toLowerCase()) {
     case "китай":
-      alert(`Доставка в ${userCountry} будет стоить ${COST_CHINA} кредитов`);
+      cost = COST_CHINA;
       break;
     case "чили":
-      alert(`Доставка в ${userCountry} будет стоить ${COST_CHILE} кредитов`);
+      cost = COST_CHILE;
       break;
     case "австралия":
-      alert(`Доставка в ${userCountry} будет стоить ${COST_AUSTRALIA} кредитов`);
+      cost = COST_AUSTRALIA;
       break;
     case "индия":
-      alert(`Доставка в ${userCountry} будет стоить ${COST_INDIA} кредитов`);
+      cost = COST_INDIA;
       break;
     case "ямайка":
-      alert(`Доставка в ${userCountry} будет стоить ${COST_JAMAICA} кредитов`);
-      break;
-    default:
-      alert("В вашей стране доставка не доступна");
+      cost = COST_JAMAICA;
   }
+  alert(cost === -Infinity ? "В вашей стране доставка не доступна" : `Доставка в ${userCountry} будет стоить ${cost} кредитов`);
 }
