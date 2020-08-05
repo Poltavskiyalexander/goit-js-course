@@ -1,20 +1,19 @@
 "use strict";
-let sum;
-let userInput;
+let input;
+let total = 0;
+let flag = false;
 do {
-  userInput = prompt("Введите число");
-  if (userInput === null) {
-    if (sum === undefined) {
-      alert("Очень жать что вы не хотите пользоваться нашим калькулятором ;(");
-    } else {
-      alert(`Общая сумма чисел равна ${sum}`);
-    }
+  input = prompt("Введите число");
+  if (input === null) {
     break;
   }
-  debugger;
-  if (Number(userInput)) {
-    sum = Number(userInput) + sum;
-  } else {
-    alert("Вы ввели не число! в следующей раз будьте внимательней");
+  if (Number.isNaN(Number.parseFloat(input))) {
+    alert("Было введено не число, попробуйте еще раз");
+    continue;
   }
-} while (true);
+  total += Number.parseFloat(input);
+  flag = true;
+} while (input !== null);
+if (flag) {
+  alert(`Общая сумма чисел равна ${total}`);
+}
