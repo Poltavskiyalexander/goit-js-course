@@ -1,12 +1,7 @@
 "use strict";
+
 const checkForSpam = function (message) {
-  const FORBIDDEN_WORDS = ["spam", "sale"];
-  for (let element of FORBIDDEN_WORDS) {
-    if (message.toLowerCase().indexOf(element.toLowerCase()) !== -1) {
-      return true;
-    }
-  }
-  return false;
+  return message.toLowerCase().includes("spam") || message.toLowerCase().includes("sale");
 };
 
 /*

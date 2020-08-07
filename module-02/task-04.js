@@ -1,9 +1,6 @@
 "use strict";
 const formatString = function (str) {
-  if (str.length > 40) {
-    return str.substr(0, 40) + "...";
-  }
-  return str;
+  return str.length > 40 ? `${str.slice(0, 40)}...` : str;
 };
 
 /*

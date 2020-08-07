@@ -1,21 +1,20 @@
 "use strict";
-let input;
 const numbers = [];
-let total;
+let input;
 do {
   input = prompt("Введите число");
-  if (input === null) {
-    break;
+  if (input !== null) {
+    if (!(Number.isFinite(+input) && input !== "")) {
+      console.log("Вы ввели не число! в следующей раз будьте внимательней");
+      continue;
+    }
+    numbers.push(+input);
   }
-  if (!Number(input)) {
-    console.log("Вы ввели не число! в следующей раз будьте внимательней");
-    continue;
+} while (input !== null);
+if (numbers.length) {
+  let total = 0;
+  for (const number of numbers) {
+    total += number;
   }
-  numbers.push(Number(input));
-} while (true);
-if (numbers.length === 0) {
-  console.log("Очень жать что вы не хотите пользоваться нашим калькулятором ;(");
-} else {
-  total = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
   console.log(`Сумма введенных вами чисел равна: ${total}`);
 }
