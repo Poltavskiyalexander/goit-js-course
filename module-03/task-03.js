@@ -1,24 +1,15 @@
+"use strict";
 const findBestEmployee = function (employees) {
-  let arrBestEmployees = [];
+  let bestEmployee;
   let bestResult = -Infinity;
-  for (const key of Object.keys(employees)) {
-    if (employees[key] > bestResult) {
-      arrBestEmployees = [];
-      arrBestEmployees.push(key);
-      bestResult = employees[key];
-      continue;
-    }
-    if (employees[key] === bestResult) {
-      arrBestEmployees.push(key);
-      continue;
+  for (const employee in employees) {
+    if (employees.hasOwnProperty(employee) && employees[employee] > bestResult) {
+      bestEmployee = employee;
+      bestResult = employees[employee];
     }
   }
-  return arrBestEmployees.join(", ");
+  return bestEmployee;
 };
-
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
 console.log(
   findBestEmployee({
     ann: 29,
@@ -42,15 +33,5 @@ console.log(
     david: 21,
     kiwi: 19,
     chelsy: 38,
-  })
-); // lux
-
-console.log(
-  findBestEmployee({
-    lux: 147,
-    david: 21,
-    kiwi: 19,
-    chelsy: 38,
-    ajax: 147,
   })
 ); // lux

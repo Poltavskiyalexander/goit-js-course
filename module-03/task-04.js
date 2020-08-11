@@ -1,6 +1,10 @@
 "use strict";
 const countTotalSalary = function (employees) {
-  return Object.values(employees).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  let total = 0;
+  for (const employee in employees) {
+    total += employees[employee];
+  }
+  return total;
 };
 
 /*
