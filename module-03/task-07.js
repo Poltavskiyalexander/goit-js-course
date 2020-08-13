@@ -81,7 +81,12 @@ const account = {
    * Метод ищет и возвращает объект транзации по id
    */
   getTransactionDetails(id) {
-    return this.transactions[id - 1];
+    for (const transaction of this.transactions) {
+      if (transaction.id === id) {
+        return transaction;
+      }
+    }
+    return "Транзакция с таким id не найдена";
   },
 
   /*
