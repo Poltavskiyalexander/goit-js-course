@@ -10,7 +10,9 @@ const getUsersWithEyeColor = (users, color) => users.filter((user) => user.eyeCo
 console.log(getUsersWithEyeColor(users, "blue")); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
 //Получить массив имен пользователей по полу (поле gender).
-const getUsersWithGender = (users, gender) => users.filter((user) => user.gender === gender).map((user) => (user = user.name));
+const getUsersWithGender = (users, gender) => {
+  users.filter((user) => user.gender === gender).map((user) => (user = user.name));
+};
 console.log(getUsersWithGender(users, "male")); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 //Получить массив только неактивных пользователей (поле isActive).
@@ -34,7 +36,8 @@ console.log(getUsersWithAge(users, 30, 40));
 const calculateTotalBalance = (users) => users.reduce((acc, user) => (acc += user.balance), 0);
 console.log(calculateTotalBalance(users)); // 20916
 
-const getUsersWithFriend = (users, friendName) => users.filter((user) => user.friends.includes(friendName)).map((user) => (user = user.friends));
+const getUsersWithFriend = (users, friendName) =>
+  users.filter((user) => user.friends.includes(friendName)).map((user) => (user = user.friends));
 
 console.log(getUsersWithFriend(users, "Briana Decker")); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sheree Anthony' ]
