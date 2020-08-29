@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (input.value === "") {
       return;
     }
-    if (input.value.length >= +input.getAttribute("data-length")) {
+    if (input.value.length === +input.getAttribute("data-length")) {
       input.classList.add("valid");
     } else {
       input.classList.add("invalid");
