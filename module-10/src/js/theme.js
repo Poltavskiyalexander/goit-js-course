@@ -4,26 +4,28 @@ const Theme = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  //Собираем ссылки на нужные ноды
   const refs = {
     body: document.querySelector('body'),
-    switchInput: document.querySelector('input.js-switch-input'),
+    switchInput: document.querySelector('.theme-switch__toggle'),
   };
-  //инициализируем тему при загрузке страницы
-  if (localStorage.getItem('theme') === Theme.DARK) {
-    refs.body.classList.add(Theme.DARK);
-    refs.switchInput.checked = true;
-  } else {
+
+  if (localStorage.getItem('keyTheme') === null) {
     refs.body.classList.add(Theme.LIGHT);
+    refs.switchInput.checked = false;
+  } else {
+    refs.body.classList.add(localStorage.getItem('keyTheme'));
+    refs.switchInput.checked = true;
   }
-  //Отслеживаем изменения темы
-  refs.switchInput.addEventListener('change', event => {
-    if (event.currentTarget.checked) {
-      localStorage.setItem('theme', Theme.DARK);
-    } else {
-      localStorage.removeItem('theme');
+
+  refs.switchInput.addEventListener('change', () => {
+    if (refs.body.classList.contains(Theme.LIGHT)) {
+      refs.body.classList.remove(Theme.LIGHT);
+      refs.body.classList.add(Theme.DARK);
+      localStorage.setItem('keyTheme', Theme.DARK);
+    } else if (refs.body.classList.contains(Theme.DARK)) {
+      refs.body.classList.remove(Theme.DARK);
+      refs.body.classList.add(Theme.LIGHT);
+      localStorage.setItem('keyTheme', Theme.LIGHT);
     }
-    refs.body.classList.toggle(Theme.DARK);
-    refs.body.classList.toggle(Theme.LIGHT);
   });
 });

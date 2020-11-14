@@ -1,0 +1,143 @@
+body {
+  background: #222 url('../images/bg.gif') repeat;
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+.bg-gradient {
+  position: fixed;
+  width: 1000px;
+  height: 1000px;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  margin: -500px 0 0 -500px;
+  background: url('../images/bg-gradient.png') no-repeat center;
+}
+
+.container {
+  text-align: center;
+  margin: 0 auto;
+  width: 800px;
+  margin-top: 30px;
+  /* height: 400px; */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* margin: -200px 0 0 -400px; */
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: #eee;
+  text-shadow: 0 3px 3px #000000;
+}
+
+.cloc-heder {
+  font-size: 60px;
+  margin: 0 0 10px;
+  line-height: 1;
+}
+
+.cloc-sub-heder {
+  font-size: 18px;
+}
+
+.CDT {
+  position: relative;
+  font-size: 60px;
+  color: #eee;
+  margin: 20px 0 50px;
+  font-weight: bold;
+}
+
+.CDT .field {
+  margin: 10px;
+  box-shadow: 0 5px 8px #000000;
+  position: relative;
+  display: inline-block;
+}
+
+.CDT .value {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background: #000;
+  background-image: linear-gradient(
+    to bottom,
+    #000000 2%,
+    #3c3c3c 50%,
+    #000000 100%
+  );
+  background-image: -o-linear-gradient(
+    to bottom,
+    #000000 2%,
+    #3c3c3c 50%,
+    #000000 100%
+  );
+  background-image: -moz-linear-gradient(
+    to bottom,
+    #000000 2%,
+    #3c3c3c 50%,
+    #000000 100%
+  );
+  background-image: -webkit-linear-gradient(
+    to bottom,
+    #000000 2%,
+    #3c3c3c 50%,
+    #000000 100%
+  );
+  background-image: -ms-linear-gradient(
+    to bottom,
+    #000000 2%,
+    #3c3c3c 50%,
+    #000000 100%
+  );
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-radius: 7px;
+  background-clip: padding-box;
+  padding: 0 12px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  border: 1px solid #555;
+  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 3px 3px #000000;
+}
+
+.CDT .line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 52%;
+  left: 0;
+  background: #000;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.CDT .clock-face-end {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  opacity: 0;
+}
+
+.CDT .clock-face {
+  opacity: 0;
+}
+
+.label {
+  font-size: 12px;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: #777;
+}
