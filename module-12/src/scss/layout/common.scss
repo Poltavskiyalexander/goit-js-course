@@ -1,0 +1,75 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: $base_font-family;
+  font-weight: $base_font-weight;
+  font-style: $base_font-style;
+  font-size: $base_font-size;
+  line-height: $base_line-height;
+  color: $base_color;
+}
+
+.bg {
+  position: absolute;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  & :after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  max-width: $container_max-width;
+  padding: $container_padding;
+  margin: 0 auto;
+}
+
+form {
+  border-style: none;
+  margin: 0;
+  padding: 0;
+
+  & *:focus,
+  & *:visited {
+    outline: none;
+  }
+}

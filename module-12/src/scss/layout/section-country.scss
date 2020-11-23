@@ -1,0 +1,137 @@
+.country__header {
+  color: $base_color;
+  text-align: center;
+  margin: 0.7em 0;
+  font-size: 40px;
+}
+.country__search-form {
+  position: relative;
+  border: 2px solid $base_color;
+  border-radius: 10px;
+  max-width: 350px;
+  margin: 0.83em auto;
+  background-color: $bg_color;
+  & input,
+  & button {
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  & input {
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+    color: $base_color;
+    @include placeholder {
+      color: $base_color;
+    }
+  }
+  & button {
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+    &:before {
+      content: 'clear';
+      font-family: 'Material Icons';
+      font-size: 30px;
+      color: $base_color;
+    }
+  }
+}
+.country__list {
+  counter-reset: li;
+  list-style: none;
+  font: 14px 'Trebuchet MS', 'Lucida Sans';
+  padding: 0;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+
+  max-width: 350px;
+  margin: 0 auto;
+}
+.country__list a {
+  position: relative;
+  display: block;
+  padding: 0.4em 0.4em 0.4em 0.8em;
+  margin: 0.5em 0 0.5em 2.5em;
+  background: rgba(220, 220, 225, 0.5);
+  color: $base_color;
+  text-decoration: none;
+  font-weight: 900;
+  transition: all 0.3s ease-out;
+  &:hover {
+    background: rgba(220, 220, 225, 0.5);
+    background: $bg_color;
+  }
+  &:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: rgba(220, 220, 225, 0.5);
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    border: 0.5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -0.5em;
+    transition: all 0.3s ease-out;
+  }
+  &:hover:after {
+    left: -0.5em;
+    border-left-color: #ec0a0a;
+  }
+}
+.country__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+  & h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: $text_shadow;
+    color: rgba(117, 248, 10, 0.95);
+  }
+  & .country__info,
+  & .country__flag {
+    width: 40%;
+    margin: 0.5em 1em;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  & .country__info {
+    font-size: 20px;
+    text-shadow: $text_shadow;
+    color: #fff;
+    & li {
+      padding: 6px;
+      padding-left: 20px;
+      &:before {
+        padding-right: 10px;
+        font-weight: bold;
+        color: #c0c0c0;
+        content: 'done';
+        font-family: 'Material Icons';
+      }
+    }
+  }
+  & .country__flag img {
+    width: 100%;
+    height: auto;
+  }
+}
