@@ -8,7 +8,7 @@ import InfiniteScroll from 'infinite-scroll';
 
 const API_KEY = '19126431-639b2ba18eb4caa5d22b03767';
 const API_SETTINGS = {
-  url: 'https://cors-anywhere.herokuapp.com/https://pixabay.com/api/',
+  url: 'https://pixabay.com/api/',
   image_type: 'photo',
   orientation: 'horizontal',
   per_page: 12,
