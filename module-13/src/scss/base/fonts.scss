@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/alegreya/Alegreya-Regular.eot'); /* For IE6-8 */
+  src: url('../fonts/alegreya/Alegreya-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/alegreya/Alegreya-Regular.woff2') format('woff2'),
+    url('../fonts/alegreya/Alegreya-Regular.woff') format('woff'),
+    url('../fonts/alegreya/Alegreya-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/alegreya/Alegreya-Bold.eot'); /* For IE6-8 */
+  src: url('../fonts/alegreya/Alegreya-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/alegreya/Alegreya-Bold.woff2') format('woff2'),
+    url('../fonts/alegreya/Alegreya-Bold.woff') format('woff'),
+    url('../fonts/alegreya/Alegreya-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/alegreya/Alegreya-Bold.eot'); /* For IE6-8 */
+  src: url('../fonts/alegreya/Alegreya-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/alegreya/Alegreya-Bold.woff2') format('woff2'),
+    url('../fonts/alegreya/Alegreya-Bold.woff') format('woff'),
+    url('../fonts/alegreya/Alegreya-Bold.ttf') format('truetype');
+}

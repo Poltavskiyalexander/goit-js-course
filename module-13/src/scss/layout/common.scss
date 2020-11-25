@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: $base_font-family;
+  font-weight: $base_font-weight;
+  font-style: $base_font-style;
+  font-size: $base_font-size;
+  line-height: $base_line-height;
+  color: $base_color;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  max-width: $container_max-width;
+  padding: $container_padding;
+  margin: 0 auto;
+}
+
+form {
+  border-style: none;
+  margin: 0;
+  padding: 0;
+
+  & *:focus,
+  & *:visited {
+    outline: none;
+  }
+}
