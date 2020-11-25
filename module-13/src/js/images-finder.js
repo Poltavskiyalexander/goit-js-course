@@ -1,9 +1,4 @@
 import cardTemplates from '../templates/card.hbs';
-
-import '../../node_modules/@pnotify/core/dist/PNotify.css';
-import '@pnotify/core/dist/BrightTheme.css';
-import { info } from '@pnotify/core/dist/PNotify';
-
 import InfiniteScroll from 'infinite-scroll';
 
 const API_KEY = '19126431-639b2ba18eb4caa5d22b03767';
@@ -57,10 +52,6 @@ const submitHandler = event => {
   infScroll.on('load', function (response) {
     const data = JSON.parse(response);
     if (data.total === 0) {
-      info({
-        delay: 5000,
-        text: `No images found for your request`,
-      });
       loader(false);
       return;
     }
